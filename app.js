@@ -3,6 +3,12 @@ const cors = require("cors");
 const contactsRouter = require("./app/routes/contact.route");
 const ApiError = require("./app/api-error");
 
+const config = {
+  db: {
+    uri: process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/contactbook",
+  }
+};
+
 const app = express();
 
 app.use(cors());
